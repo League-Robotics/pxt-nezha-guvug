@@ -20,6 +20,8 @@ nezhaV2.setComboMotor(nezhaV2.MotorPostion.M1, nezhaV2.MotorPostion.M2)
 nezhaV2.setWheelPerimeter(28.133, nezhaV2.Uint.cm)
 nezhaV2.setWheelBase(11.56, nezhaV2.Uint.cm)
 nezhaV2.setComboRotateCalibration(1)
+let forward = 30
 basic.forever(function () {
-	
+    let turn = PlanetX_Basic.TrackBit_get_offset() / 100
+    nezhaV2.comboStart(forward + turn, forward - turn)
 })
